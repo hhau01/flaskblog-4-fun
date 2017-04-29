@@ -17,7 +17,13 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li class=""><a href="/register">Register</a></li>
+            {% if session.logged_in %}
+                <li class=""><a href="/dashboard">Dashboard</a></li>
+                <li class=""><a href="/logout">Logout</a></li>
+            {% else %}
+                <li class=""><a href="/register">Register</a></li>
+                <li class=""><a href="/login">Login</a></li>
+            {% endif %}
         </ul>
     </div><!--/.nav-collapse -->
     </div>
